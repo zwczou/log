@@ -223,20 +223,12 @@ func (l *Logger) Debugf(format string, v ...interface{}) {
 	l.Output(Ldebug, fmt.Sprintf(format, v...))
 }
 
-func (l *Logger) Debugln(v ...interface{}) {
-	l.Output(Ldebug, fmt.Sprintln(v...))
-}
-
 func (l *Logger) Info(v ...interface{}) {
 	l.Output(Linfo, fmt.Sprint(v...))
 }
 
 func (l *Logger) Infof(format string, v ...interface{}) {
 	l.Output(Linfo, fmt.Sprintf(format, v...))
-}
-
-func (l *Logger) Infoln(v ...interface{}) {
-	l.Output(Linfo, fmt.Sprintln(v...))
 }
 
 func (l *Logger) Warn(v ...interface{}) {
@@ -247,20 +239,12 @@ func (l *Logger) Warnf(format string, v ...interface{}) {
 	l.Output(Lwarn, fmt.Sprintf(format, v...))
 }
 
-func (l *Logger) Warnln(v ...interface{}) {
-	l.Output(Lwarn, fmt.Sprintln(v...))
-}
-
 func (l *Logger) Error(v ...interface{}) {
 	l.Output(Lerror, fmt.Sprint(v...))
 }
 
 func (l *Logger) Errorf(format string, v ...interface{}) {
 	l.Output(Lerror, fmt.Sprintf(format, v...))
-}
-
-func (l *Logger) Errorln(v ...interface{}) {
-	l.Output(Lerror, fmt.Sprintln(v...))
 }
 
 func (l *Logger) Panic(v ...interface{}) {
@@ -275,12 +259,6 @@ func (l *Logger) Panicf(format string, v ...interface{}) {
 	panic(s)
 }
 
-func (l *Logger) Panicln(v ...interface{}) {
-	s := fmt.Sprintln(v...)
-	l.Output(Lpanic, s)
-	panic(s)
-}
-
 func (l *Logger) Fatal(v ...interface{}) {
 	l.Output(Lfatal, fmt.Sprint(v...))
 	os.Exit(1)
@@ -288,10 +266,5 @@ func (l *Logger) Fatal(v ...interface{}) {
 
 func (l *Logger) Fatalf(format string, v ...interface{}) {
 	l.Output(Lfatal, fmt.Sprintf(format, v...))
-	os.Exit(1)
-}
-
-func (l *Logger) Fatalln(v ...interface{}) {
-	l.Output(Lfatal, fmt.Sprintln(v...))
 	os.Exit(1)
 }
