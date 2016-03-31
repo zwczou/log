@@ -64,7 +64,7 @@ type Logger struct {
 	calldepth int
 }
 
-func NewLogger(out io.Writer, prefix string, flag int) *Logger {
+func New(out io.Writer, prefix string, flag int) *Logger {
 	level := Ldebug
 	return &Logger{out: out, prefix: prefix, flag: flag, level: level, calldepth: 2}
 }
